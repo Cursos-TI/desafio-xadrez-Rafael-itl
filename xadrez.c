@@ -6,35 +6,58 @@
 #define MOV_CAVALO_LINHAS 2
 #define MOV_CAVALO_COLUNAS 1
 
+
+// Função recursiva para movimentar a Torre (Direita)
+void moverTorre(int movimentos) {
+   if (movimentos <= 0) return;
+   printf("Direita\n");
+   moverTorre(movimentos - 1);
+}
+
+// Função recursiva para movimentar a Rainha (Esquerda)
+void moverRainha(int movimentos) {
+   if (movimentos <= 0) return;
+   printf("Esquerda\n");
+   moverRainha(movimentos - 1);
+}
+
+// Função recursiva e com loops aninhados para movimentar o Bispo (Diagonal Direita para Cima)
+void moverBispo(int i) {
+   if (i >= MOV_BISPO) return;
+   for (int j = 0; j < 1; j++) {
+       printf("Direita\n");
+       printf("Cima\n");
+   }
+   moverBispo(i + 1);
+}
 int main() {
-    printf("\nmovimentação do bispo:\n");
-    for(int i = 0; i < MOV_BISPO; i++); {
-       printf("direita\n");
-       printf("cima\n");
-    }
+   // Movimentação do Bispo (Diagonal Superior Direita)
+   printf("Movimentação do Bispo:\n");
+   moverBispo(0);
 
-    printf("\nmovimentação da torre:\n");
-    for(int i = 0; i < MOV_TORRE; i++); {
-        printf("direita\n");
-    }
+   // Movimentação da Torre (Direita)
+   printf("\nMovimentação da Torre:\n");
+   moverTorre(MOV_TORRE);
 
-    printf("\nmovimentação rainha:\n");
-     int count = 0;
-     while (count < MOV_RAINHA) {
-        printf("esquerda\n");
-        count++;
-     }
-
+   // Movimentação da Rainha (Esquerda)
+   printf("\nMovimentação da Rainha:\n");
+   moverRainha(MOV_RAINHA);
      printf("\nmovimentação do cavalo\,");
-     for(int i = 0; i < MOV_CAVALO_LINHAS; i++) {
-        printf("baixo\n");
+     for(int i = 0; j = 0; i > MOV_CAVALO_LINHAS - 1 || j < MOV_CAVALO_COLUNAS;) {
+        if ( i MOV_CAVALO_LINHAS - 1){
+      printf("cima\n");
+      i--;
+      continue;
      }
 
-     int j = 0;
-     while (j <  MOV_CAVALO_COLUNAS) {
-        printf("esquerda\n");
+     if( j < MOV_CAVALO_COLUNAS){
+        printf("direita\n");
         j++;
      }
+     if(i <= MOV_CAVALO_LINHAS - 1 && j >= MOV_CAVALO_COLUNAS){
+      break;
+     }
+   }
 
     return 0;
 }
