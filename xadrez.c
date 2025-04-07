@@ -42,22 +42,23 @@ int main() {
    // Movimentação da Rainha (Esquerda)
    printf("\nMovimentação da Rainha:\n");
    moverRainha(MOV_RAINHA);
-     printf("\nmovimentação do cavalo\,");
-     for(int i = 0; j = 0; i > MOV_CAVALO_LINHAS - 1 || j < MOV_CAVALO_COLUNAS;) {
-        if ( i MOV_CAVALO_LINHAS - 1){
-      printf("cima\n");
-      i--;
-      continue;
-     }
 
-     if( j < MOV_CAVALO_COLUNAS){
-        printf("direita\n");
-        j++;
-     }
-     if(i <= MOV_CAVALO_LINHAS - 1 && j >= MOV_CAVALO_COLUNAS){
-      break;
-     }
-   }
+      // Movimentação do Cavalo (L: 2 para cima, 1 para direita)
+    printf("\nMovimentação do Cavalo:\n");
+    for (int i = 0, j = 0; i > MOV_CAVALO_LINHAS - 1 || j < MOV_CAVALO_COLUNAS;) {
+        if (i > MOV_CAVALO_LINHAS - 1) {
+            printf("Cima\n");
+            i--;
+            continue;
+        }
+        if (j < MOV_CAVALO_COLUNAS) { 
+            printf("Direita\n");
+            j++;
+        }
+        if (i <= MOV_CAVALO_LINHAS - 1 && j >= MOV_CAVALO_COLUNAS) {
+            break;
+        }
+    }
 
     return 0;
 }
